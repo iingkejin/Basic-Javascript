@@ -175,3 +175,82 @@ console.log("a" < "z");
 console.log("a" > "A");
 console.log("Hello" > "Hi");
 
+let text = 123123;
+console.log(text);
+// 자료형 확인 : typeof
+console.log(typeof(text));
+console.log(typeof(true));
+console.log(typeof(false));
+
+// 2. 논리 연산자
+// &&(AND), || (OR), !(NOT)
+// A && B : 둘 다 참일 때
+// A || B : 둘 중에 하나가 참일 때
+// !A == B : A와 B가 같지 않을 때
+
+
+// Scope (전역변수, 지역변수)
+// 1. 지역변수(=로컬 스코프)에서 전역변수(=글로벌 스코프) 사용 가능
+let x = 1;
+let y = 2;
+let z = 3;
+console.log(x);
+console.log(y);
+console.log(z);
+
+function local1() {
+  // 지역변수 안에 변수에 값을 재할당 할 수 있다
+  let x = 4;
+  let y = 5;
+  let z = 6;
+
+  console.log(x);
+  console.log(y);
+  console.log(z);
+}
+// 함수호출 방법 : 함수이름()
+local1();
+
+// 2. 전역변수(글로벌 스코프)에서 지역 변수(로컬 스코프) 사용 불가능
+
+// 전역변수(글로벌 스코프)
+let A1 = 1;
+let B2 = 2;
+
+function local2() {
+  let C3 = 3;
+  let D4 = 4;
+
+  console.log(A1);
+  console.log(B2);
+  console.log(C3);
+  console.log(D4);
+}
+local2();
+
+// console.log(C3);
+// console.log(D4);
+
+
+// 3. 로컬 스코프(지역변수) 내에 다른 로컬 스코프 이중으로 겹칠 때
+// double2 함수에서는 double1 함수의 변수를 사용 할 수 있지만,
+// double1에서는 double2 변수 사용 X
+let e = 1;
+
+function double1() {
+  let f = 3;
+  let g = 4;
+  console.log(f);
+  console.log(g);
+  // ReferenceError 발생
+  console.log(h);
+
+  function double2() {
+    let h = 5;
+    let i = 6;
+    console.log(f); // 3
+    console.log(h);
+  }
+  double2();
+}
+double1();
