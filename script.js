@@ -348,3 +348,34 @@ switch (browser) {
     msg = "브라우저를 선택하세요!";
 }
 console.log(msg);
+
+
+// for문 (=반복문)
+let index;
+
+function local_func() {
+  for(index = 0; index <= 10; index++) {
+    console.log(index);
+  }
+}
+local_func();
+
+// 1부터 100까지 더한 값 출력 / 결과 = 5050
+// for문이랑 대입연산자 사용
+// 초기값 -> 조건식 -> 출력 -> 증감값
+// 1. 초기값이 let i = 1 이라는 값을 메모리 공간에 저장
+// 2. 조건식 : i가 100이 될 때 까지 반복적으로 조건 실행
+// i = 1 <= 100 true
+// i = 2 <= 100 true (조건까지 반복)
+let zero = 0;
+
+for(let i = 1; i <= 100; i++) {
+  zero += i;
+  // zero = zero + i;
+  // zero = 0 + 1;
+  // 1 = 1 + 1; 
+  // 2 = 2 + 1; 
+  // 조건식이 만족할 때 까지 ++로 값이 증감되면서 반복 실행
+}
+console.log(zero);
+
