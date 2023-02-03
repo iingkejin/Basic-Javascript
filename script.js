@@ -243,7 +243,7 @@ function double1() {
   console.log(f);
   console.log(g);
   // ReferenceError 발생
-  console.log(h);
+  // console.log(h);
 
   function double2() {
     let h = 5;
@@ -254,3 +254,97 @@ function double1() {
   double2();
 }
 double1();
+
+// 조건문
+let apple_price = 8;
+
+if(apple_price >= 10) {
+  console.log("너무 비싸");
+} else if (apple_price < 5) {
+  console.log("저렴하군");
+} else {
+  console.log("Nice!");
+}
+
+// 조건문2
+// 19살 이상이라면 "성인입니다" html상에서 보이게
+// 19살 이상이 아니라면 "성인이 아닙니다"
+let age = 16;
+let msg;
+
+if(age >= 19) {
+  let msg = '성인 입니다.';
+  // document.write('성인입니다.');
+  // document.write('<h1>성인입니다.</h1>');
+  // document.write('<h1>' + msg + '</h1>');
+  document.write(`<h1>${msg}</h1>`);
+} else {
+  let msg = '성인이 아닙니다.';
+  // document.write('성인 아닙니다.');
+  // document.write('<h1>성인이 아닙니다.</h1>');
+  // document.write('<h1>' + msg + '</h1>');
+  document.write(`<h1>${msg}</h1>`);
+}
+
+
+// 3항 연산자
+// if,else 대체 사용가능
+let msg_another = age >= 19 ? "성인 입니다" : "성인이 아닙니다.";
+console.log(msg_another);
+
+// 조건문 (Switch)
+// 조건이 많은 경우 Switch문을 사용하는 것이 가독성이 좋다.
+// case 0 : 실행문
+// 조건이 맞으면 break 이후 비교하지 않고 Switch문을 종료 시킨다.
+// default문은 Switch 가장 마지막에 위치
+// default문 실행이 종료되면 Switch 빠져 나가므로 break 생략
+let day_number = 5;
+let day = '';
+
+switch (day_number) {
+  case 0:
+    day = 'Sunday';
+    break;
+  case 1:
+    day = 'Monday';
+    break;
+  case 2:
+    day = 'Tuesday';
+    break;
+  case 3:
+    day = 'Wednesday';
+    break;
+  case 4:
+    day = 'Thursday';
+    break;
+  case 5:
+    day = 'Friday';
+    break;
+  case 6:
+    day = 'Saturday';
+    break;
+  case 7:
+    day = 'Sunday';
+    break;
+  default:
+    day = "Error!"
+}
+console.log(day);
+
+// Switch 조건문2
+let browser = "Opera";
+
+switch (browser) {
+  case "Exploer" :
+    msg = "익스플로어";
+    break;
+  case "Chrome" :
+  case "Firefox" :
+  case "Safari" :
+  case "Opera" :
+    msg = "오페라 누가 써요";
+    break;
+  default:
+    msg = "브라우저를 선택하세요!";
+}
+console.log(msg);
