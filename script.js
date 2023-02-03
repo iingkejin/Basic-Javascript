@@ -57,3 +57,121 @@ console.log(parseInt(123.35363));
 console.log(parseInt('123.35363'));
 // NaN
 console.log(parseInt('sdgdsgsdg'));
+
+
+// 연산자
+// 1. 산술 연산자 : +, -, /, *, %
+console.log(30 + 10);
+console.log(30 - 10);
+console.log(30 * 10);
+console.log(30 / 10);
+// 나머지 연산자 : %
+console.log(30 % 10);
+// 거듭제곱 연산자 : **
+console.log(30 ** 10);
+
+// 2. 대입 연산자 : =, +=, -=
+let num1 = 123;
+let num2 = 456;
+let str1 = "Hello";
+let str2 = "World!";
+
+let num3, str3;
+
+num3 = num1 + num2;
+str3 = str1 + str2;
+console.log(num3);
+console.log(str3);
+
+let num4 = num1 - num2; 
+let str4 = str1 - str2; // NaN
+console.log(num4);
+console.log(str4);
+
+// 자바스크립트는 동적언어라 변수 선언시 타입 지정 X
+// 값이 할당되는 순간 그 값에 따라 타입이 결정됨.
+// 자바스크립트가 타입스크립트에 비해 자유도와 유연성 높다
+// 1. 예상 못한 버그가 발생할 확률이 높다.
+// 2. 프로젝트 규모가 커질수록 유지보수 비용 증가, 안정성 저하
+
+// let num(변수이름) = '숫자'; (자바스크립트)
+
+// 타입스크립트는 선언과 동시에 어떤 타입을 넘겨야하는지 명확하게 작성
+// 해당 타입이 아닌 데이터를 넘긴다면 바로 컴파일러 에러 발생 -> 사전에 빠른 대응 가능
+// let num:number = '문자열'; (타입스크립트)
+// 자신이 지정한 자료형하고 다른 값이 들어오면 에러 발생
+// TypeScript 마이크로소프트가 개발하고 유지하고 있는 오픈소스 프로그래밍 언어
+// 자바스크립에 타입을 부여한 언어 -> 자바스크립트 상위 버전
+
+// 자바스크립트 대소문자 구분 O 소문자 a A 
+let A = '문자열';
+let B = 12345;
+let C = A + B;
+let D = 20 - '10';
+console.log(C, D);
+
+// 3. 복합 대입 연산자
+let Num = 10;
+let result_1, result_2, result_3, result_4, result_5;
+result_1 = result_2 = result_3 = result_4 = result_5 = 10;
+console.log(result_1, result_2, result_3, result_4, result_5);
+
+// 복합 대입 연산자 +=
+// result_1 = result_1 + Num
+result_1 += Num;
+console.log(result_1);
+
+//  복합 대입 연산자 -=
+// result_2 = result_2 - Num
+result_2 -= Num;
+console.log(result_2);
+
+// 복합 대입 연산자 *=
+// result_3 = result_3 * Num
+result_3 *= Num;
+console.log(result_3);
+
+// 복합 대입 연산자 /=
+// result_4 = result_4 / Num
+result_4 /= Num;
+console.log(result_4);
+
+// 복합 대입 연산자 %=
+// result_5 = result_5 % Num
+result_5 %= Num;
+console.log(result_5);
+
+
+// 증가, 감소 연산자 ++, --
+let number, result;
+number = 10;
+console.log(number); // 10
+result = number++; // result = number / 먼저 결과값을 저장하고 후에 ++ 증감
+// result에 num값이 복사되고, num++는 그 다음값 부터 num에 증가
+console.log(result); // 10
+console.log(number); // 11
+
+number = 10;
+console.log(number);
+result = ++number; // 이 행에서 ++가 반영되고, 증감된 결과값이 result에 저장
+console.log(result);
+
+// 비교 논리 연산자
+// 1. 비교 연산자
+// Number
+console.log(5 <= 10); //true
+console.log("5" <= 10); // true
+console.log(true == 1); // true
+console.log(true == '1'); // true
+// true는 자료형 : Boolean / 숫자 1은 자료형 : number
+console.log(true === 1); //false 
+console.log(false != 0); //false
+console.log(false !== 0) //true
+
+// String
+// 알파벳 순서대로 비교
+console.log("a" < "z");
+// 소문자 > 대문자
+console.log("a" > "A");
+console.log("Hello" > "Hi");
+
